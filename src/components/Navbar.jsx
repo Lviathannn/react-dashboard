@@ -35,6 +35,7 @@ export default function Navbar() {
       handleClick,
       screenSize,
       setScreenSize,
+      currentColor,
    } = useStateContext();
 
    useEffect(() => {
@@ -66,7 +67,7 @@ export default function Navbar() {
                setActiveMenu((prevActiveMenu) => !prevActiveMenu);
             }}
             icon={<AiOutlineMenu />}
-            color="cyan"
+            color={currentColor}
          />
          <div className="flex gap-2">
             <NavButton
@@ -75,7 +76,7 @@ export default function Navbar() {
                   handleClick("cart");
                }}
                icon={<FiShoppingCart />}
-               color="cyan"
+               color={currentColor}
             />
             <NavButton
                title="Chat"
@@ -84,7 +85,7 @@ export default function Navbar() {
                }}
                dotColor="#03c9d7"
                icon={<BsChatLeft />}
-               color="cyan"
+               color={currentColor}
             />
             <NavButton
                title="Notification"
@@ -93,7 +94,7 @@ export default function Navbar() {
                }}
                dotColor="#03c9d7"
                icon={<RiNotification3Line />}
-               color="cyan"
+               color={currentColor}
             />
             <TooltipComponent content="Profile" position="BottomCenter">
                <div
